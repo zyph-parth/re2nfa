@@ -15,7 +15,6 @@ Built with React and Vite, this project combines a clean interactive UI with a c
 - Simulate candidate strings against the minimized DFA
 - View execution traces for acceptance and rejection paths
 - Explore the theory pipeline directly in the app
-- Production-ready build output for deployment on platforms like Vercel
 
 ## Supported Regex Syntax
 
@@ -28,14 +27,14 @@ The parser supports the following operators and conventions:
 - `r?` for optional
 - `( ... )` for grouping
 - `\x` to escape the next character as a literal
-- `ε` for the empty string
+- `epsilon` for the empty string
 
 Examples:
 
 - `(a+b)*abb`
 - `a(b+c)*`
 - `a?(b+c)*`
-- `(a+ε)b`
+- `(a+epsilon)b`
 
 ## How It Works
 
@@ -60,19 +59,19 @@ The application follows a standard automata-construction pipeline:
 
 ```text
 re2nfa/
-├─ src/
-│  ├─ components/     # UI panels and interactive controls
-│  ├─ engine/         # Regex parser, NFA/DFA construction, layout, SVG rendering
-│  ├─ App.jsx         # Main application shell
-│  ├─ main.jsx        # React entry point
-│  └─ index.css       # Global styling
-├─ test/
-│  └─ engine.test.js  # Engine regression tests
-├─ public/            # Optional static assets
-├─ dist/              # Production build output
-├─ index.html
-├─ package.json
-└─ vite.config.js
+|- src/
+|  |- components/     # UI panels and interactive controls
+|  |- engine/         # Regex parser, NFA/DFA construction, layout, SVG rendering
+|  |- App.jsx         # Main application shell
+|  |- main.jsx        # React entry point
+|  `- index.css       # Global styling
+|- test/
+|  `- engine.test.js  # Engine regression tests
+|- public/            # Optional static assets
+|- dist/              # Production build output
+|- index.html
+|- package.json
+`- vite.config.js
 ```
 
 ## Getting Started
@@ -105,22 +104,9 @@ http://localhost:5173
 - `npm run lint` runs ESLint
 - `npm test` runs the engine test suite
 
-## Deployment
-
-This project is ready to deploy on Vercel.
-
-Recommended Vercel settings:
-
-- Framework Preset: `Vite`
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Install Command: `npm install`
-
-Once deployed, Vercel will build the application from source and publish the generated `dist` output automatically.
-
 ## Quality and Verification
 
-Before deploying, it is a good idea to run:
+Before sharing or packaging the project, it is a good idea to run:
 
 ```bash
 npm run lint
@@ -143,7 +129,7 @@ This project is well suited for:
 - automata and theory of computation demos
 - teaching regex-to-automata conversion visually
 - debugging or validating regular-language examples
-- portfolio presentation of algorithms + UI work
+- portfolio presentation of algorithms and UI work
 
 ## Notes
 
@@ -153,4 +139,4 @@ This project is well suited for:
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](/c:/Users/Parth%20Gupta/Downloads/re2nfa-redesigned/re2nfa/LICENSE) for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
